@@ -1,79 +1,237 @@
-<!DOCTYPE html>
 <html>
+<head>
+<title>IP65 - a TCP/IP stack for 6502 computers</title>
+</head>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Ip65 : IP65 is a TCP/IP stack for 6502 based computers" />
+<style type="text/css">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+body {
+  background-color: white;
+  color: black;
+}
 
-    <title>Ip65</title>
-  </head>
+table {
+  background-color: #000000;
+  padding: 0px;
+  margin: 10px 20px;
+}
 
-  <body>
+th {
+  width: 10em;
+  background-color: #ccccff;
+  padding: 4px;
+  text-align: center;
+  padding-right: 4px;
+#  border: solid 2px black;
+}
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/oliverschmidt/ip65">View on GitHub</a>
+td {
+  font-family: sans-serif;
+  font-weight: bold;
+  width: 6em;
+  padding: 4px;
+  text-align: center;
+#  border: solid 2px black;
+}
 
-          <h1 id="project_title">Ip65</h1>
-          <h2 id="project_tagline">IP65 is a TCP/IP stack for 6502 based computers</h2>
+.done {
+  background-color: #99ff99;
+}
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/oliverschmidt/ip65/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/oliverschmidt/ip65/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+.partial {
+  background-color: #ffff99;
+}
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+.unimp {
+  background-color: #ff9999;
+}
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+.legend {
+  background-color: #ffffff;
+  font-weight: normal;
+}
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+.red {
+  color: #ff6666;
+  font-weight: bold;
+}
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+.yellow {
+  color: #ffcc00;
+  font-weight: bold;
+}
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+.green {
+  color: #33cc33;
+  font-weight: bold;
+}
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+.history_entry {
+ background-color: #ffffff;  
+  font-weight: normal;
+}
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+</style>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<body>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<h1>IP65</h1>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<p>
+IP65 is a TCP/IP stack for 6502 based computers.
+</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Ip65 maintained by <a href="https://github.com/oliverschmidt">oliverschmidt</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+<h2>Status</h2>
 
-    
+<table>
 
-  </body>
+  <tr>
+    <th>Applications</th>
+    <td class="partial" colspan="1" >Telnet Client</td>
+    <td class="partial" colspan="1">Gopher Client</td>
+    <td class="partial" colspan="1">HTTP Client</td>
+    <td class="partial" colspan="1">HTTP Server</td>
+    <td class="done" colspan="1">Ping</td>
+  </tr>
+
+  <tr>
+    <th>Services</th>
+    <td class="partial" colspan="2" rowspan="2">TCP</td>
+    <td class="done" colspan="2">DHCP/DNS/TFTP</td>
+    <td class="done" colspan="2">Echo</td>
+  </tr>
+
+  <tr>
+    <th>Transport</th>
+    <td class="done" colspan="2">UDP</td>
+    <td class="done" colspan="2">ICMP</td>
+  </tr>
+
+  <tr>
+    <th>Network</th>
+    <td class="done" colspan="6">IP</td>
+  </tr>
+
+  <tr>
+    <th>Addressing</th>
+    <td class="done" colspan="6">ARP</td>
+  </tr>
+
+  <tr>
+    <th>Ethernet driver</th>
+    <td class="done" colspan="3">CS8900A (RR-NET/Uthernet)</td>
+    <td class="done" colspan="3">Wiznet W5100</td>
+
+  </tr>
+
+
+  <tr>
+    <th>Host computer</th>
+    <td class="done" colspan="2">C64/C128</td>
+    <td class="done" colspan="2">Apple ][</td>
+    <td class="done" colspan="2">VIC-20</td>
+
+  </tr>
+
+  <tr>
+    <td class="legend" colspan="6">
+      <span class="green">Green</span>: Working
+      <span class="yellow">Yellow</span>: Partial
+      <span class="red">Red</span>: Unimplemented
+    </td>
+  </tr>
+
+</table>
+
+<h2>Documentation</h2>
+
+<a href="doc/ref_frames.html">IP65 technical reference</a>
+
+
+<h2>Download</h2>
+
+<a href="http://github.com/oliverschmidt/ip65/archive/master.zip">Latest code</a> (github.com)<p>
+<a href="http://sourceforge.net/projects/ip65/files/ip65-2012-11-21.zip/download">ip65-2012-11-21.zip</a> (sourceforge.net)<p>
+<a href="http://www.paradroid.net/ip65/ip65-2009-01-22.zip">ip65-2009-01-22.zip</a> (paradroid.net)
+
+
+<h2>History</h2>
+<pre>
+  Release	Maintainer	Changes
+  -------	----------	-------
+  2011-01-15	Jonno Downes	drivers for Wiznet W5100 ethernet, VIC-20 host
+  2009-12-23	Jonno Downes	TCP and telnet bugfixes, vt100 emulation, XMODEM support
+  2009-10-31	Jonno Downes	Added Web Application Server functions
+  2009-08-02	Jonno Downes	More TCP functionality, includes telnet
+  2009-07-12	Jonno Downes	Initial TCP implementation (use -DTCP to include)
+  2009-03-21	Jonno Downes	Added technical reference documentation
+  2009-03-15	Jonno Downes	Added DHCP, DNS & TFTP
+  2009-01-22	Per Olofsson	Added copymem fix from Jonno Downes. Added MPL license.
+  2008-09-27	Per Olofsson	Added timeout fix for ineth_tx from David Schmidt.
+  2006-09-20	Per Olofsson	Fixed checksum calculation for odd packet sizes.
+  2006-02-22	Per Olofsson	Added fix for sending of packets larger than 256 bytes
+				from Ewen Wannop and Glenn Jones.
+</pre>
+
+<h2>Sample UDP listener source</h2>
+
+<pre>
+gangedport      = 60064
+
+        jsr ip65_init
+        lda #&lt;gotpacket
+        ldx #&gt;gotpacket
+        sta udp_callback
+        stx udp_callback + 1
+        lda #&lt;gangedport
+        ldx #&gt;gangedport
+        jsr udp_add_listener
+
+main:
+        jsr ip65_process
+        jmp main
+
+gotpacket:
+        sei
+        lda $01
+        pha
+        lda udp_inp
+        sta $01
+
+        lda udp_inp + 1
+        ldx udp_inp + 2
+        sta zp_data
+        stx zp_data + 2
+        ldy udp_inp + 3
+copy:
+        lda udp_inp + 3,y
+        sta (zp_data),y
+        dey
+        bne copy
+
+        pla
+        sta $01
+        cli
+        rts
+</pre>
+
+
+<h2>License</h2>
+
+This project is released under the Mozilla Public License Version 1.1.
+For details, please visit <a href="http://www.mozilla.org/MPL/">http://www.mozilla.org/MPL/</a>.
+
+
+<h2>Source Code</h2>
+
+Browse online at <a href="http://github.com/oliverschmidt/ip65">http://github.com/oliverschmidt/ip65</a> or else download the whole tree through Git with the following instruction:
+  <pre>git clone https://github.com/oliverschmidt/ip65.git</pre>
+
+
+<p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+
+
+</body>
 </html>
