@@ -26,49 +26,14 @@ th {
 }
 
 td {
+  background-color: #ffff99;
   font-family: sans-serif;
   font-weight: bold;
   width: 6em;
   padding: 4px;
   text-align: center;
+  white-space: nowrap;
 #  border: solid 2px black;
-}
-
-.done {
-  background-color: #99ff99;
-}
-
-.partial {
-  background-color: #ffff99;
-}
-
-.unimp {
-  background-color: #ff9999;
-}
-
-.legend {
-  background-color: #ffffff;
-  font-weight: normal;
-}
-
-.red {
-  color: #ff6666;
-  font-weight: bold;
-}
-
-.yellow {
-  color: #ffcc00;
-  font-weight: bold;
-}
-
-.green {
-  color: #33cc33;
-  font-weight: bold;
-}
-
-.history_entry {
- background-color: #ffffff;  
-  font-weight: normal;
 }
 
 </style>
@@ -89,65 +54,60 @@ IP65 is a TCP/IP stack for 6502 based computers.
 
   <tr>
     <th>Applications</th>
-    <td class="partial" colspan="1" >Telnet Client</td>
-    <td class="partial" colspan="1">Gopher Client</td>
-    <td class="partial" colspan="1">HTTP Client</td>
-    <td class="partial" colspan="1">HTTP Server</td>
-    <td class="done" colspan="1">TFTP</td>
-    <td class="done" colspan="1">Ping</td>
+    <td colspan="1">HTTP Client</td>
+    <td colspan="1">HTTP Server</td>
+    <td colspan="1">Telnet Client</td>
+    <td colspan="1">Gopher Client</td>
+    <td colspan="2">TFTP</td>
+    <td colspan="1">Ping</td>
   </tr>
 
   <tr>
     <th>Services</th>
-    <td class="partial" colspan="4" rowspan="2">TCP</td>
-    <td class="done" colspan="1">DHCP / DNS</td>
-    <td class="done" colspan="1">Echo</td>
+    <td colspan="4" rowspan="2">TCP</td>
+    <td colspan="1">DHCP</td>
+    <td colspan="1">DNS</td>
+    <td colspan="1">Echo</td>
   </tr>
 
   <tr>
     <th>Transport</th>
-    <td class="done" colspan="1">UDP</td>
-    <td class="done" colspan="1">ICMP</td>
+    <td colspan="2">UDP</td>
+    <td colspan="1">ICMP</td>
   </tr>
 
   <tr>
     <th>Network</th>
-    <td class="done" colspan="6">IP</td>
+    <td colspan="7">IP</td>
   </tr>
 
   <tr>
     <th>Addressing</th>
-    <td class="done" colspan="6">ARP</td>
+    <td colspan="7">ARP</td>
   </tr>
 
   <tr>
     <th>Ethernet controller</th>
-    <td class="done" colspan="6">CS8900A / LAN91C96 / W5100</td>
+    <td colspan="7">CS8900A / LAN91C96 / W5100</td>
   </tr>
 
   <tr>
     <th>Ethernet driver</th>
-    <td class="done" colspan="1">RR-Net</td>
-    <td class="done" colspan="1">ETH64</td>
-    <td class="done" colspan="1">Uthernet</td>
-    <td class="done" colspan="1">LANceGS</td>
-    <td class="done" colspan="1">Uthernet II</td>
-    <td class="done" colspan="1">RR-Net</td>
+    <td colspan="1">RR-Net</td>
+    <td colspan="1">ETH64</td>
+    <td colspan="1">Uthernet</td>
+    <td colspan="1">LANceGS</td>
+    <td colspan="1">Uthernet II</td>
+    <td colspan="1">Dragon Cart</td>
+    <td colspan="1">RR-Net</td>
   </tr>
 
   <tr>
     <th>Host computer</th>
-    <td class="done" colspan="2">C64 / C128</td>
-    <td class="done" colspan="3">Apple ][</td>
-    <td class="done" colspan="1">VIC20</td>
-  </tr>
-
-  <tr>
-    <td class="legend" colspan="7">
-      <span class="green">Green</span>: Working
-      <span class="yellow">Yellow</span>: Partial
-      <span class="red">Red</span>: Unimplemented
-    </td>
+    <td colspan="2">C64 / C128</td>
+    <td colspan="3">Apple ][</td>
+    <td colspan="1">ATARI 8-bit</td>
+    <td colspan="1">VIC20</td>
   </tr>
 
 </table>
