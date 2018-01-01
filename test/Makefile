@@ -7,6 +7,11 @@
 # Build for WIZnet W5100 based devices:
 # make eth=wn
 
+AS = ca65
+LD = ld65
+CL = cl65
+C1541 = c1541
+
 ifeq ($(eth),cl)
   C64DRIVERLIB = ../drivers/c64rrnet.lib
   A2DRIVERLIB  = ../drivers/a2uther.lib
@@ -97,39 +102,39 @@ ATARI_CFG = atari.cfg
 vt100.com: ATARI_CFG = ../apps/atrtelnet.cfg
 
 %.o: %.s
-	ca65 $<
+	$(AS) $<
 
 %-slotscan.o: %.s
-	ca65 -D A2_SLOT_SCAN -o $@ $<
+	$(AS) -D A2_SLOT_SCAN -o $@ $<
 
 %.o: %.c
 
 %.prg: %.o ip65 drivers $(INCFILES)
-	ld65 -o $*.prg -C c64.cfg -m $*.c64.map -vm $< $(IP65LIB) $(C64DRIVERLIB) c64.lib
+	$(LD) -o $*.prg -C c64.cfg -m $*.c64.map -vm $< $(IP65LIB) $(C64DRIVERLIB) c64.lib
 
 %.bin: %.o ip65 drivers $(INCFILES)
-	ld65 -o $*.bin -C apple2.cfg -m $*.a2.map -vm $< $(IP65LIB) $(A2DRIVERLIB) apple2.lib
+	$(LD) -o $*.bin -C apple2.cfg -m $*.a2.map -vm $< $(IP65LIB) $(A2DRIVERLIB) apple2.lib
 
 %.com: %.o ip65 drivers $(INCFILES)
-	ld65 -o $*.com -C $(ATARI_CFG) -m $*.atr.map -vm $< $(IP65LIB) $(ATRDRIVERLIB) atari.lib
+	$(LD) -o $*.com -C $(ATARI_CFG) -m $*.atr.map -vm $< $(IP65LIB) $(ATRDRIVERLIB) atari.lib
 
 %.vicprg: %.o ip65 drivers $(INCFILES)
-	ld65 -o $*.vicprg -C vic20-32k.cfg -m $*.vic.map -vm $< $(IP65LIB) $(VICDRIVERLIB) vic20.lib
+	$(LD) -o $*.vicprg -C vic20-32k.cfg -m $*.vic.map -vm $< $(IP65LIB) $(VICDRIVERLIB) vic20.lib
 
 %.prg: %.c ip65 drivers $(INCFILES)
-	cl65 -o $*.prg -O -t c64 -m $*.c64.map -vm $< $(IP65LIB) ../drivers/ip65_c64.lib
+	$(CL) -o $*.prg -O -t c64 -m $*.c64.map -vm $< $(IP65LIB) ../drivers/ip65_c64.lib
 	rm $*.o
 
 %.bin: %.c ip65 drivers $(INCFILES)
-	cl65 -o $*.bin -O -t apple2 -m $*.a2.map -vm $< $(IP65LIB) ../drivers/ip65_apple2.lib
+	$(CL) -o $*.bin -O -t apple2 -m $*.a2.map -vm $< $(IP65LIB) ../drivers/ip65_apple2.lib
 	rm $*.o
 
 %.com: %.c ip65 drivers $(INCFILES)
-	cl65 -o $*.com -O -t atari -m $*.atr.map -vm $< $(IP65LIB) ../drivers/ip65_atari.lib
+	$(CL) -o $*.com -O -t atari -m $*.atr.map -vm $< $(IP65LIB) ../drivers/ip65_atari.lib
 	rm $*.o
 
 %.xl.com: %.c ip65 drivers $(INCFILES)
-	cl65 -o $*.xl.com -O -t atarixl -m $*.atrxl.map -vm $< $(IP65LIB) ../drivers/ip65_atarixl.lib
+	$(CL) -o $*.xl.com -O -t atarixl -m $*.atrxl.map -vm $< $(IP65LIB) ../drivers/ip65_atarixl.lib
 	rm $*.o
 
 ip65test.d64: prg

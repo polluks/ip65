@@ -18,6 +18,9 @@
 # ip65_atari.lib   : ATARI 8-bit with Dragon Cart (default base addr: $d500)
 # ip65_atarixl.lib : ATARI XL with Dragon Cart (default base addr: $d500)
 
+AS=ca65
+AR=ar65
+
 DRIVERS=\
 	c64rrnet.lib \
 	c64eth64.lib \
@@ -37,13 +40,13 @@ DRIVERS=\
 all: $(DRIVERS)
 
 $(DRIVERS):
-	ar65 a $@ $^
+	$(AR) a $@ $^
 
 %.o: %.s
-	ca65 -D DYN_DRV=0 $<
+	$(AS) -D DYN_DRV=0 $<
 
 %.xl.o: %.s
-	ca65 -o $*.xl.o -t atarixl $<
+	$(AS) -o $*.xl.o -t atarixl $<
 
 C64OBJS=\
 	c64print.o \
